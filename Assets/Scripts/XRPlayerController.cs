@@ -8,6 +8,8 @@ public class XRPlayerController : MonoBehaviour
     public GameObject hand;
     public float normalMoveSpeed = 1;
     public InputActionReference testReference = null;
+    public static bool movementMode = false;
+
     [Header("True to allow desktop controlls")]
     // we want to make this automatic eventually
     public bool desktopControls = true;
@@ -40,12 +42,21 @@ public class XRPlayerController : MonoBehaviour
     {
         // XR movement
         // we will add a use configerable choice for this - one or the other
+        if(movementMode)
+        {
+            //Use hand direction for movement direction.
+            transform.position += hand.transform.forward * normalMoveSpeed * Time.deltaTime * speedMultiplier;
+        } else
+        {
+            //Use head camera for movement direction
+            transform.position += Camera.main.transform.forward * normalMoveSpeed * Time.deltaTime * speedMultiplier;
+
+        }
+
 
         // go in direction looking
-        //transform.position += Camera.main.transform.forward * normalMoveSpeed * Time.deltaTime * speedMultiplier;
 
         // go in direction pointing
-        transform.position += hand.transform.forward * normalMoveSpeed * Time.deltaTime * speedMultiplier;
 
         // Fallback movement
         if (desktopControls)
