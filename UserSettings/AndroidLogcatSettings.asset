@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "1WMHH83C5X0526",
         "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-        "processId": 18096,
+        "processId": 13676,
         "exited": false
     },
     "m_SelectedPriority": 1,
@@ -11,55 +11,85 @@
         {
             "deviceId": "1WMHH83C5X0526",
             "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 14612,
+            "processId": 5714,
+            "exited": true
+        },
+        {
+            "deviceId": "1WMHH83C5X0526",
+            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
+            "processId": 6064,
+            "exited": true
+        },
+        {
+            "deviceId": "1WMHH83C5X0526",
+            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
+            "processId": 6987,
+            "exited": true
+        },
+        {
+            "deviceId": "1WMHH83C5X0526",
+            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
+            "processId": 7790,
+            "exited": true
+        },
+        {
+            "deviceId": "1WMHH83C5X0526",
+            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
+            "processId": 4100,
+            "exited": true
+        },
+        {
+            "deviceId": "1WMHH83C5X0526",
+            "name": "com.oculus.os.vrusb",
+            "processId": 4730,
             "exited": false
         },
         {
             "deviceId": "1WMHH83C5X0526",
             "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 15168,
+            "processId": 5353,
             "exited": false
         },
         {
             "deviceId": "1WMHH83C5X0526",
             "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 15748,
+            "processId": 5724,
             "exited": false
         },
         {
             "deviceId": "1WMHH83C5X0526",
             "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 16227,
+            "processId": 6796,
             "exited": false
         },
         {
             "deviceId": "1WMHH83C5X0526",
             "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 16860,
+            "processId": 7142,
             "exited": false
         },
         {
             "deviceId": "1WMHH83C5X0526",
             "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 17266,
+            "processId": 7814,
             "exited": false
         },
         {
             "deviceId": "1WMHH83C5X0526",
             "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 17470,
+            "processId": 8247,
             "exited": false
         },
         {
             "deviceId": "1WMHH83C5X0526",
             "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 17746,
+            "processId": 9141,
             "exited": false
         },
         {
             "deviceId": "1WMHH83C5X0526",
             "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 18096,
+            "processId": 13676,
             "exited": false
         }
     ],
@@ -113,7 +143,7 @@
         "MemoryGroup": 2,
         "Behavior": 0
     },
-    "m_Filter": "entere",
+    "m_Filter": "POS",
     "m_FilterIsRegularExpression": false,
     "m_SymbolPaths": []
 }

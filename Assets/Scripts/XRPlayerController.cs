@@ -1,17 +1,22 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+
+using UnityEngine.InputSystem.Controls;
+using UnityEngine.InputSystem.XR;
 using UnityEngine.XR.OpenXR;
 
 public class XRPlayerController : MonoBehaviour
 {
+
     [Header("Reference to the controller object in XRRig heirachy")]
     public GameObject hand;
     public float normalMoveSpeed = 1;
     public InputActionReference testReference = null;
     public static bool movementMode = false;
 
+
     [Header("True to allow desktop controlls")]
-    // we want to make this automatic eventually
+    // we want to ma ke this automatic eventually
     public bool desktopControls = true;
 
     // values that will come from user input
@@ -40,9 +45,10 @@ public class XRPlayerController : MonoBehaviour
 
     public void Update()
     {
+
         // XR movement
         // we will add a use configerable choice for this - one or the other
-        if(movementMode)
+        if (movementMode)
         {
             //Use hand direction for movement direction.
             transform.position += hand.transform.forward * normalMoveSpeed * Time.deltaTime * speedMultiplier;
