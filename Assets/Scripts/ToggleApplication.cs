@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 
 public class ToggleApplication : MonoBehaviour
 {
-
     public InputActionReference ActionRef = null;
 
     //On is the toggle
@@ -30,21 +29,25 @@ public class ToggleApplication : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Toggle: " + on);
         if (buttonHit == true && buttonGripped == true)
         {
             buttonHit = false;
 
             //if on is true make false, if on is false make it true
             on = !on;
+            
 
             //turn on off spotlight here
             if (on)
             {
                 GetComponent<Renderer>().material.color = new Color(1, 0, 0);
+                GetComponent<Toggle>().active = true;
             }
             else
             {
                 GetComponent<Renderer>().material.color = new Color(0, 1, 0);
+                GetComponent<Toggle>().active = false;
 
             }
         }

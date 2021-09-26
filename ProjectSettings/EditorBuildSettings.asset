@@ -17,7 +17,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/003_GUI.unity
     guid: 8374f0bac0cd8465090aa2eb5f9854e1
+  - enabled: 0
+    path: Assets/Scenes/004_ControllerAttachedInterface.unity
+    guid: 8e0f0c39ec4f44e67b1fdcce0ebbcbf3
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 17b69d48159b542a490feae9710a62d2, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: b4a66dc8ab6f8aa4ab9856e9335ae76f, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 124a7eac18356b74392a9c88b32f356e, type: 2}
     xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: b94f1d676737044909c4c367dc51307e, type: 2}
