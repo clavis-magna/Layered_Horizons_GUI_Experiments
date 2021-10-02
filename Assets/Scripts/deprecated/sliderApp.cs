@@ -28,16 +28,16 @@ public class sliderApp : MonoBehaviour
         if (IncreaseActionDetect == true)
         {
             IncreaseActionDetect = false;
-            GetComponent<Slider>().IncreaseValue();
+            GetComponent<SliderComponent>().IncreaseValue();
         }
 
         if (DecreaseActionDetect == true)
         {
             DecreaseActionDetect = false;
-            GetComponent<Slider>().DecreaseValue();
+            GetComponent<SliderComponent>().DecreaseValue();
         }
 
-        float sliderVal = GetComponent<Slider>().value;
+        float sliderVal = GetComponent<SliderComponent>().value;
 
         GetComponent<Renderer>().material.color = new Color(sliderVal, 0, 0);
 
