@@ -167,6 +167,22 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Dpad Y"",
+                    ""type"": ""Button"",
+                    ""id"": ""3a4b1fca-6fa1-4de5-858d-04bf928e77a9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Dpad X"",
+                    ""type"": ""Button"",
+                    ""id"": ""32e8a929-4cd7-4345-bbb0-dbde2ac2aeb7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -499,6 +515,28 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
                     ""action"": ""Translate Anchor"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d49edd3d-9adf-4d13-9434-5a13aadb6a97"",
+                    ""path"": ""<XRController>{LeftHand}/secondaryButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Generic XR Controller"",
+                    ""action"": ""Dpad Y"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""12ce7052-af00-4893-8ef1-143d4de8a5c6"",
+                    ""path"": ""<XRController>{LeftHand}/primaryButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Generic XR Controller"",
+                    ""action"": ""Dpad X"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -1014,6 +1052,8 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
         m_XRILeftHand_Move = m_XRILeftHand.FindAction("Move", throwIfNotFound: true);
         m_XRILeftHand_RotateAnchor = m_XRILeftHand.FindAction("Rotate Anchor", throwIfNotFound: true);
         m_XRILeftHand_TranslateAnchor = m_XRILeftHand.FindAction("Translate Anchor", throwIfNotFound: true);
+        m_XRILeftHand_DpadY = m_XRILeftHand.FindAction("Dpad Y", throwIfNotFound: true);
+        m_XRILeftHand_DpadX = m_XRILeftHand.FindAction("Dpad X", throwIfNotFound: true);
         // XRI RightHand
         m_XRIRightHand = asset.FindActionMap("XRI RightHand", throwIfNotFound: true);
         m_XRIRightHand_Position = m_XRIRightHand.FindAction("Position", throwIfNotFound: true);
@@ -1132,6 +1172,8 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_XRILeftHand_Move;
     private readonly InputAction m_XRILeftHand_RotateAnchor;
     private readonly InputAction m_XRILeftHand_TranslateAnchor;
+    private readonly InputAction m_XRILeftHand_DpadY;
+    private readonly InputAction m_XRILeftHand_DpadX;
     public struct XRILeftHandActions
     {
         private @XRIDefaultInputActions m_Wrapper;
@@ -1149,6 +1191,8 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_XRILeftHand_Move;
         public InputAction @RotateAnchor => m_Wrapper.m_XRILeftHand_RotateAnchor;
         public InputAction @TranslateAnchor => m_Wrapper.m_XRILeftHand_TranslateAnchor;
+        public InputAction @DpadY => m_Wrapper.m_XRILeftHand_DpadY;
+        public InputAction @DpadX => m_Wrapper.m_XRILeftHand_DpadX;
         public InputActionMap Get() { return m_Wrapper.m_XRILeftHand; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1197,6 +1241,12 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
                 @TranslateAnchor.started -= m_Wrapper.m_XRILeftHandActionsCallbackInterface.OnTranslateAnchor;
                 @TranslateAnchor.performed -= m_Wrapper.m_XRILeftHandActionsCallbackInterface.OnTranslateAnchor;
                 @TranslateAnchor.canceled -= m_Wrapper.m_XRILeftHandActionsCallbackInterface.OnTranslateAnchor;
+                @DpadY.started -= m_Wrapper.m_XRILeftHandActionsCallbackInterface.OnDpadY;
+                @DpadY.performed -= m_Wrapper.m_XRILeftHandActionsCallbackInterface.OnDpadY;
+                @DpadY.canceled -= m_Wrapper.m_XRILeftHandActionsCallbackInterface.OnDpadY;
+                @DpadX.started -= m_Wrapper.m_XRILeftHandActionsCallbackInterface.OnDpadX;
+                @DpadX.performed -= m_Wrapper.m_XRILeftHandActionsCallbackInterface.OnDpadX;
+                @DpadX.canceled -= m_Wrapper.m_XRILeftHandActionsCallbackInterface.OnDpadX;
             }
             m_Wrapper.m_XRILeftHandActionsCallbackInterface = instance;
             if (instance != null)
@@ -1240,6 +1290,12 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
                 @TranslateAnchor.started += instance.OnTranslateAnchor;
                 @TranslateAnchor.performed += instance.OnTranslateAnchor;
                 @TranslateAnchor.canceled += instance.OnTranslateAnchor;
+                @DpadY.started += instance.OnDpadY;
+                @DpadY.performed += instance.OnDpadY;
+                @DpadY.canceled += instance.OnDpadY;
+                @DpadX.started += instance.OnDpadX;
+                @DpadX.performed += instance.OnDpadX;
+                @DpadX.canceled += instance.OnDpadX;
             }
         }
     }
@@ -1420,6 +1476,8 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnRotateAnchor(InputAction.CallbackContext context);
         void OnTranslateAnchor(InputAction.CallbackContext context);
+        void OnDpadY(InputAction.CallbackContext context);
+        void OnDpadX(InputAction.CallbackContext context);
     }
     public interface IXRIRightHandActions
     {

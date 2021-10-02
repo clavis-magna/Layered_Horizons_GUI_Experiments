@@ -7,17 +7,37 @@ public class Toggle : MonoBehaviour
     public bool active;
     public string toggleName;
 
-    void ToggleOn() {
+    //Leave current string blank, changes on toggle
+    [HideInInspector] // Hides var below
+    public string currentString;
+
+    [Header("Messages for toggle on or off")]
+
+    public string toggleOnString;
+    public string toggleOffString;
+
+    void Update()
+    {
+        if (active)
+        {
+            currentString = toggleOnString;
+        } else
+        {
+            currentString = toggleOffString;
+        }
+    }
+
+    public void ToggleOn() {
         active = true;
     }
 
-    void ToggleOff()
+    public void ToggleOff()
     {
         active = false;
     }
 
-    //Toggle(bool _active, string _toggleName) {
-    //    this.active = _active;
-    //    this.toggleName = _toggleName;
-    //}
+    public void ToggleAlternate()
+    {
+        active = !active;
+    }
 }

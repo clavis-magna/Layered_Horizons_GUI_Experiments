@@ -8,6 +8,10 @@ using UnityEngine.XR.OpenXR;
 public class XRPlayerController : MonoBehaviour
 {
 
+    [Header("Read from toggle to switch movement mode")]
+    public Toggle toggleInput;
+
+
     [Header("Reference to the controller object in XRRig heirachy")]
     public GameObject hand;
     public float normalMoveSpeed = 1;
@@ -48,7 +52,7 @@ public class XRPlayerController : MonoBehaviour
 
         // XR movement
         // we will add a use configerable choice for this - one or the other
-        if (movementMode)
+        if (toggleInput.active)
         {
             //Use hand direction for movement direction.
             transform.position += hand.transform.forward * normalMoveSpeed * Time.deltaTime * speedMultiplier;

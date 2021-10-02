@@ -21,6 +21,8 @@ public class attachGUIToHands : MonoBehaviour
     private bool LeftGUIActive;
     private bool RightGUIActive;
 
+    //adjusts y position of all the UI elements. 1.4f is on top of controller.
+    private float yPositionOffset = 1.5f;
 
 
     //variables for both controllers positions and rotation.
@@ -68,14 +70,14 @@ public class attachGUIToHands : MonoBehaviour
         if (LeftHandActivate == null)
         {
             //position on top of characters hand and facing the headset postion
-            LeftHandGUI.transform.position = new Vector3(leftPositionXYZ.x, leftPositionXYZ.y + 0.2f, leftPositionXYZ.z) + transform.position;
+            LeftHandGUI.transform.position = new Vector3(leftPositionXYZ.x, leftPositionXYZ.y + yPositionOffset, leftPositionXYZ.z) + transform.position;
             Vector3 relativePosition = headsetPositionXYZ - LeftHandGUI.transform.position;
             LeftHandGUI.transform.rotation = Quaternion.LookRotation(relativePosition);
         } else
         {
             if (LeftGUIActive)
             {
-                LeftHandGUI.transform.position = new Vector3(leftPositionXYZ.x, leftPositionXYZ.y + 0.2f, leftPositionXYZ.z) + transform.position;
+                LeftHandGUI.transform.position = new Vector3(leftPositionXYZ.x, leftPositionXYZ.y + yPositionOffset, leftPositionXYZ.z) + transform.position;
                 Vector3 relativePosition = headsetPositionXYZ - LeftHandGUI.transform.position;
                 LeftHandGUI.transform.rotation = Quaternion.LookRotation(relativePosition);
             } else
@@ -88,7 +90,7 @@ public class attachGUIToHands : MonoBehaviour
 
         if (RightHandActivate == null)
         {
-            RightHandGUI.transform.position = new Vector3(rightPositionXYZ.x, rightPositionXYZ.y + 0.2f, rightPositionXYZ.z) + transform.position;
+            RightHandGUI.transform.position = new Vector3(rightPositionXYZ.x, rightPositionXYZ.y + yPositionOffset, rightPositionXYZ.z) + transform.position;
             Vector3 relativePosition = headsetPositionXYZ - RightHandGUI.transform.position;
             RightHandGUI.transform.rotation = Quaternion.LookRotation(relativePosition);
         }
@@ -96,7 +98,7 @@ public class attachGUIToHands : MonoBehaviour
         {
             if (RightGUIActive)
             {
-                RightHandGUI.transform.position = new Vector3(rightPositionXYZ.x, rightPositionXYZ.y + 0.2f, rightPositionXYZ.z) + transform.position;
+                RightHandGUI.transform.position = new Vector3(rightPositionXYZ.x, rightPositionXYZ.y + yPositionOffset, rightPositionXYZ.z) + transform.position;
                 Vector3 relativePosition = headsetPositionXYZ - RightHandGUI.transform.position;
                 RightHandGUI.transform.rotation = Quaternion.LookRotation(relativePosition);
             }

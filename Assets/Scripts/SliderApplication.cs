@@ -34,7 +34,7 @@ public class SliderApplication : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("slider Value: " + sliderValue);
+        Debug.Log("SliderValue: " + sliderValue);
         if (buttonHit == true && buttonGripped == true)
         {
             sliderValue += 0.01f;
@@ -102,13 +102,13 @@ public class SliderApplication : MonoBehaviour
     {
         //controllerEndPos = controllerPositionXYZ;
         buttonGripped = true;
-        print("ControllerAction performed Called");
+        //print("ControllerAction performed Called");
 
     }
 
     private void DoReleasedThing(InputAction.CallbackContext context)
     {
-        print("ControllerAction canceled Called");
+        //print("ControllerAction canceled Called");
         buttonGripped = false;
     }
 }

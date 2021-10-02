@@ -29,7 +29,7 @@ public class ToggleApplication : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Toggle: " + on);
+        //Debug.Log("Toggle: " + on);
         if (buttonHit == true && buttonGripped == true)
         {
             buttonHit = false;
@@ -39,6 +39,7 @@ public class ToggleApplication : MonoBehaviour
             
 
             //turn on off spotlight here
+            //at the moment this changes the colour of the object and tells the toggle component true or false
             if (on)
             {
                 GetComponent<Renderer>().material.color = new Color(1, 0, 0);
@@ -53,7 +54,7 @@ public class ToggleApplication : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         //Debug.Log("An Object has entered the trigger");
         //Delay time
