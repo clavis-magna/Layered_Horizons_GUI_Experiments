@@ -43,7 +43,7 @@ public class changeToggleSignal : MonoBehaviour
             if (touchActivated)
             {
                 touchActivated = false;
-                GetComponent<Toggle>().ToggleAlternate();
+                GetComponent<ToggleComponent>().ToggleAlternate();
             }
         } else if (!touchReactive && pressReactive)
         {
@@ -51,7 +51,7 @@ public class changeToggleSignal : MonoBehaviour
             if (pressActivated)
             {
                 pressActivated = false;
-                GetComponent<Toggle>().ToggleAlternate();
+                GetComponent<ToggleComponent>().ToggleAlternate();
             }
         }
         else if (touchReactive && pressReactive)
@@ -62,7 +62,7 @@ public class changeToggleSignal : MonoBehaviour
                 pressActivated = false;
                 touchActivated = false;
 
-                GetComponent<Toggle>().ToggleAlternate();
+                GetComponent<ToggleComponent>().ToggleAlternate();
             }
         }
 

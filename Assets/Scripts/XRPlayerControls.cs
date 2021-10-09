@@ -647,6 +647,22 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Dpad B"",
+                    ""type"": ""Button"",
+                    ""id"": ""4d9f5164-3f86-486a-86e9-7450038bc7d2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Dpad A"",
+                    ""type"": ""Button"",
+                    ""id"": ""3da25be0-4acf-40a1-87cb-427ffaf26e6b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -968,6 +984,28 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
                     ""action"": ""Translate Anchor"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f28ae5a5-a471-4e92-8d8f-1ea6417fccef"",
+                    ""path"": ""<XRController>{RightHand}/secondaryButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dpad B"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""45e5c488-e381-40d2-8c63-088a04575a8e"",
+                    ""path"": ""<XRController>{RightHand}/primaryButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dpad A"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1069,6 +1107,8 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
         m_XRIRightHand_Move = m_XRIRightHand.FindAction("Move", throwIfNotFound: true);
         m_XRIRightHand_RotateAnchor = m_XRIRightHand.FindAction("Rotate Anchor", throwIfNotFound: true);
         m_XRIRightHand_TranslateAnchor = m_XRIRightHand.FindAction("Translate Anchor", throwIfNotFound: true);
+        m_XRIRightHand_DpadB = m_XRIRightHand.FindAction("Dpad B", throwIfNotFound: true);
+        m_XRIRightHand_DpadA = m_XRIRightHand.FindAction("Dpad A", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1317,6 +1357,8 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_XRIRightHand_Move;
     private readonly InputAction m_XRIRightHand_RotateAnchor;
     private readonly InputAction m_XRIRightHand_TranslateAnchor;
+    private readonly InputAction m_XRIRightHand_DpadB;
+    private readonly InputAction m_XRIRightHand_DpadA;
     public struct XRIRightHandActions
     {
         private @XRIDefaultInputActions m_Wrapper;
@@ -1334,6 +1376,8 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_XRIRightHand_Move;
         public InputAction @RotateAnchor => m_Wrapper.m_XRIRightHand_RotateAnchor;
         public InputAction @TranslateAnchor => m_Wrapper.m_XRIRightHand_TranslateAnchor;
+        public InputAction @DpadB => m_Wrapper.m_XRIRightHand_DpadB;
+        public InputAction @DpadA => m_Wrapper.m_XRIRightHand_DpadA;
         public InputActionMap Get() { return m_Wrapper.m_XRIRightHand; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1382,6 +1426,12 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
                 @TranslateAnchor.started -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnTranslateAnchor;
                 @TranslateAnchor.performed -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnTranslateAnchor;
                 @TranslateAnchor.canceled -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnTranslateAnchor;
+                @DpadB.started -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnDpadB;
+                @DpadB.performed -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnDpadB;
+                @DpadB.canceled -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnDpadB;
+                @DpadA.started -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnDpadA;
+                @DpadA.performed -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnDpadA;
+                @DpadA.canceled -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnDpadA;
             }
             m_Wrapper.m_XRIRightHandActionsCallbackInterface = instance;
             if (instance != null)
@@ -1425,6 +1475,12 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
                 @TranslateAnchor.started += instance.OnTranslateAnchor;
                 @TranslateAnchor.performed += instance.OnTranslateAnchor;
                 @TranslateAnchor.canceled += instance.OnTranslateAnchor;
+                @DpadB.started += instance.OnDpadB;
+                @DpadB.performed += instance.OnDpadB;
+                @DpadB.canceled += instance.OnDpadB;
+                @DpadA.started += instance.OnDpadA;
+                @DpadA.performed += instance.OnDpadA;
+                @DpadA.canceled += instance.OnDpadA;
             }
         }
     }
@@ -1494,5 +1550,7 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnRotateAnchor(InputAction.CallbackContext context);
         void OnTranslateAnchor(InputAction.CallbackContext context);
+        void OnDpadB(InputAction.CallbackContext context);
+        void OnDpadA(InputAction.CallbackContext context);
     }
 }

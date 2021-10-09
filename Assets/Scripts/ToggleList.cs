@@ -7,10 +7,10 @@ using UnityEngine.UI;
 public class ToggleList : MonoBehaviour
 {
     public Text display;
-    public Toggle toggle1Input;
+    public ToggleComponent toggle1Input;
     public Image toggle1Output;
 
-    public Toggle toggle2Input;
+    public ToggleComponent toggle2Input;
     public Image toggle2Output;
 
 

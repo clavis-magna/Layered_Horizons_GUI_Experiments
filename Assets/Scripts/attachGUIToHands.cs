@@ -6,89 +6,120 @@ using UnityEngine.InputSystem;
 
 public class attachGUIToHands : MonoBehaviour
 {
+    //add the XR Default Input Action to this
+    public InputActionAsset actionAsset;
+
+    //using an actionmap to reduce the number of references on this page
+    private InputActionMap rightControllerMap;
+    private InputActionMap leftControllerMap;
+    private InputActionMap HMDMap;
+
+
+    //Input actions for position and rotation
+    private InputAction getRightPosition;
+    private InputAction getLeftPosition;
+    private InputAction getHMDPosition;
+
+    Vector3 headsetPositionXYZ;
+    Vector3 leftPositionXYZ;
+    Vector3 rightPositionXYZ;
+
+
+    private InputAction getRightRotation;
+    private InputAction getLeftRotation;
+
+    Quaternion leftRotation;
+    Quaternion rightRotation;
+
+    //[Header("Button to reveal GUI, leave blank for always on")]
+
+
+    //Input actions for activating hand GUI
+    private InputAction rightGUIActivationInput;
+    private InputAction leftGUIActivationInput;
+
+
+    private bool LeftGUIActive;
+    private bool RightGUIActive;
+
     //Attach GUI objects to these
     [Header("Attach GUI Here")]
 
     public GameObject LeftHandGUI;
     public GameObject RightHandGUI;
 
-    [Header("Button to reveal GUI, leave blank for always on")]
 
-    //button that will show the GUI for each hand
-    public InputActionReference LeftHandActivate = null;
-    public InputActionReference RightHandActivate = null;
 
-    private bool LeftGUIActive;
-    private bool RightGUIActive;
+
+
 
     //adjusts y position of all the UI elements. 1.4f is on top of controller.
-    private float yPositionOffset = 1.5f;
+    [Header("Y Position of the GUI for both hands")]
 
+    public float yPositionOffset = 1.5f;
 
-    //variables for both controllers positions and rotation.
-    //Have rotations of the GUI look at the headset of the camera.
-    [Header("Add Positions & rotations for headset and controllers")]
-
-
-    public InputActionReference HeadsetPosition = null;
-    Vector3 headsetPositionXYZ;
-
-
-    public InputActionReference leftHandControllerPosition = null;
-    public InputActionReference leftHandControllerRotation = null;
-
-    Vector3 leftPositionXYZ;
-    Quaternion leftRotation;
-
-    public InputActionReference rightHandControllerPosition = null;
-    public InputActionReference rightHandControllerRotation = null;
-
-    Vector3 rightPositionXYZ;
-    Quaternion rightRotation;
 
     // Start is called before the first frame update
     void Start()
     {
-        HeadsetPosition.action.performed += getHeadsetPosition;
+        //Find the action map so that we can reference each of the references inside
+        //this one is for right controller only.
+        rightControllerMap = actionAsset.FindActionMap("XRI RightHand");
+        rightControllerMap.Enable();
 
-        leftHandControllerPosition.action.performed += getLeftControllerPosition;
-        rightHandControllerPosition.action.performed += getRightControllerPosition;
+        leftControllerMap = actionAsset.FindActionMap("XRI LeftHand");
+        leftControllerMap.Enable();
 
-        leftHandControllerRotation.action.performed += getLeftControllerRotation;
-        rightHandControllerRotation.action.performed += getRightControllerRotation;
+        HMDMap = actionAsset.FindActionMap("XRI HMD");
+        HMDMap.Enable();
 
-        LeftHandActivate.action.performed += LeftHandGripped;
-        LeftHandActivate.action.canceled += LeftHandReleased;
+        //Find the actions within the actionmaps
 
-        RightHandActivate.action.performed += RightHandGripped;
-        RightHandActivate.action.canceled += RightHandReleased;
+        //POSITION
+        getRightPosition = rightControllerMap.FindAction("Position");
+        getLeftPosition = leftControllerMap.FindAction("Position");
+        getHMDPosition = HMDMap.FindAction("Position");
+
+        getRightPosition.performed += context => getRightControllerPosition(context);
+        getLeftPosition.performed += context => getLeftControllerPosition(context);
+        getHMDPosition.performed += context => getHeadsetPosition(context);
+
+        //ROTATION
+        getRightRotation = rightControllerMap.FindAction("Rotation");
+        getLeftRotation = leftControllerMap.FindAction("Rotation");
+
+        getRightRotation.performed += context => getRightControllerRotation(context);
+        getLeftRotation.performed += context => getLeftControllerRotation(context);
+
+        //activate the GUI for each button
+        rightGUIActivationInput = rightControllerMap.FindAction("Select");
+        leftGUIActivationInput = leftControllerMap.FindAction("Select");
+
+        rightGUIActivationInput.performed += context => LeftHandGripped(context);
+        rightGUIActivationInput.canceled += context => LeftHandReleased(context);
+
+        leftGUIActivationInput.performed += context => RightHandGripped(context);
+        leftGUIActivationInput.canceled += context => RightHandReleased(context);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (LeftHandActivate == null)
+        if (LeftGUIActive)
         {
-            //position on top of characters hand and facing the headset postion
             LeftHandGUI.transform.position = new Vector3(leftPositionXYZ.x, leftPositionXYZ.y + yPositionOffset, leftPositionXYZ.z) + transform.position;
             Vector3 relativePosition = headsetPositionXYZ - LeftHandGUI.transform.position;
             LeftHandGUI.transform.rotation = Quaternion.LookRotation(relativePosition);
         } else
         {
-            if (LeftGUIActive)
-            {
-                LeftHandGUI.transform.position = new Vector3(leftPositionXYZ.x, leftPositionXYZ.y + yPositionOffset, leftPositionXYZ.z) + transform.position;
-                Vector3 relativePosition = headsetPositionXYZ - LeftHandGUI.transform.position;
-                LeftHandGUI.transform.rotation = Quaternion.LookRotation(relativePosition);
-            } else
-            {
-                //send this to some random place off the map
-                LeftHandGUI.transform.position = new Vector3(0, 0, 0);
-            }
+            //send this to some random place off the map
+            LeftHandGUI.transform.position = new Vector3(0, 0, 0);
         }
 
 
-        if (RightHandActivate == null)
+
+        if (RightGUIActive)
         {
             RightHandGUI.transform.position = new Vector3(rightPositionXYZ.x, rightPositionXYZ.y + yPositionOffset, rightPositionXYZ.z) + transform.position;
             Vector3 relativePosition = headsetPositionXYZ - RightHandGUI.transform.position;
@@ -96,35 +127,26 @@ public class attachGUIToHands : MonoBehaviour
         }
         else
         {
-            if (RightGUIActive)
-            {
-                RightHandGUI.transform.position = new Vector3(rightPositionXYZ.x, rightPositionXYZ.y + yPositionOffset, rightPositionXYZ.z) + transform.position;
-                Vector3 relativePosition = headsetPositionXYZ - RightHandGUI.transform.position;
-                RightHandGUI.transform.rotation = Quaternion.LookRotation(relativePosition);
-            }
-            else
-            {
-                //send this to some random place off the map
-                RightHandGUI.transform.position = new Vector3(0, 0, 0);
-            }
+            //send this to some random place off the map
+            RightHandGUI.transform.position = new Vector3(0, 0, 0);
         }
+        
     }
 
     private void onDestroy()
     {
-        HeadsetPosition.action.performed -= getHeadsetPosition;
+        getRightPosition.performed -= context => getRightControllerPosition(context);
+        getLeftPosition.performed -= context => getLeftControllerPosition(context);
+        getHMDPosition.performed -= context => getHeadsetPosition(context);
 
-        leftHandControllerPosition.action.performed -= getLeftControllerPosition;
-        rightHandControllerPosition.action.performed -= getRightControllerPosition;
+        getRightRotation.performed -= context => getRightControllerRotation(context);
+        getLeftRotation.performed -= context => getLeftControllerRotation(context);
 
-        leftHandControllerRotation.action.performed -= getLeftControllerRotation;
-        rightHandControllerRotation.action.performed -= getRightControllerRotation;
+        rightGUIActivationInput.performed -= context => LeftHandGripped(context);
+        rightGUIActivationInput.canceled -= context => LeftHandReleased(context);
 
-        LeftHandActivate.action.performed -= LeftHandGripped;
-        LeftHandActivate.action.canceled -= LeftHandReleased;
-
-        RightHandActivate.action.performed -= RightHandGripped;
-        RightHandActivate.action.canceled -= RightHandReleased;
+        leftGUIActivationInput.performed -= context => RightHandGripped(context);
+        leftGUIActivationInput.canceled -= context => RightHandReleased(context);
     }
 
     private void getHeadsetPosition(InputAction.CallbackContext context)

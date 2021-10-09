@@ -634,6 +634,22 @@
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Dpad B",
+                    "type": "Button",
+                    "id": "4d9f5164-3f86-486a-86e9-7450038bc7d2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Dpad A",
+                    "type": "Button",
+                    "id": "3da25be0-4acf-40a1-87cb-427ffaf26e6b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -955,6 +971,28 @@
                     "action": "Translate Anchor",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "f28ae5a5-a471-4e92-8d8f-1ea6417fccef",
+                    "path": "<XRController>{RightHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dpad B",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "45e5c488-e381-40d2-8c63-088a04575a8e",
+                    "path": "<XRController>{RightHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dpad A",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

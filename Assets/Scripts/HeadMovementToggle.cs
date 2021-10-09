@@ -6,7 +6,7 @@ using TMPro;
 
 public class HeadMovementToggle : MonoBehaviour
 {
-    public Toggle toggleInput;
+    public ToggleComponent toggleInput;
 
     //[SerializeField]
     TextMeshProUGUI textDisplay;
@@ -14,7 +14,6 @@ public class HeadMovementToggle : MonoBehaviour
     void Update()
     {
         textDisplay = GetComponent<TextMeshProUGUI>();
-
 
         //for the output check toggle status
         if (toggleInput.active)

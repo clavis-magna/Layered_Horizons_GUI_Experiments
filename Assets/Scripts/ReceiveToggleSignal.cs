@@ -13,14 +13,14 @@ public class ReceiveToggleSignal : MonoBehaviour
     public Color colorOffState;
 
 
-    private Toggle toggle;
+    private ToggleComponent toggleInput;
     private Renderer GORenderer;
 
 
     void Start()
     {
         //get the toggle component and read from it
-        toggle = GetComponent<Toggle>();
+        toggleInput = GetComponent<ToggleComponent>();
         GORenderer = GetComponent<Renderer>();
     }
 
@@ -32,7 +32,7 @@ public class ReceiveToggleSignal : MonoBehaviour
         if (changeColour)
         {
             //check if the toggle is active if yes change the colour of this GameObject.
-            if (toggle.active)
+            if (toggleInput.active)
             {
                 GORenderer.material.color = colorOnState;
             } else

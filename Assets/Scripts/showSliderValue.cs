@@ -10,15 +10,8 @@ public class showSliderValue : MonoBehaviour
     public SliderComponent sliderInput;
 
     TextMeshProUGUI textDisplay;
+
     public Slider slider;
-
-
-    //void Start()
-    //{
-
-
-    //    slider = GetComponentInChildren<Slider>();
-    //}
 
 
     void Update()

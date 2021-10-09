@@ -9,7 +9,7 @@ public class XRPlayerController : MonoBehaviour
 {
 
     [Header("Read from toggle to switch movement mode")]
-    public Toggle toggleInput;
+    public ToggleComponent toggleInput;
 
 
     [Header("Reference to the controller object in XRRig heirachy")]

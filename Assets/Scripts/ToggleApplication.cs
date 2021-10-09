@@ -43,12 +43,12 @@ public class ToggleApplication : MonoBehaviour
             if (on)
             {
                 GetComponent<Renderer>().material.color = new Color(1, 0, 0);
-                GetComponent<Toggle>().active = true;
+                GetComponent<ToggleComponent>().active = true;
             }
             else
             {
                 GetComponent<Renderer>().material.color = new Color(0, 1, 0);
-                GetComponent<Toggle>().active = false;
+                GetComponent<ToggleComponent>().active = false;
 
             }
         }
