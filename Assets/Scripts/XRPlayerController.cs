@@ -106,30 +106,30 @@ public class XRPlayerController : MonoBehaviour
 
     private void Forward(InputAction.CallbackContext context)
     {
-        print("Forward Pressed");
+        //print("Forward Pressed");
         fallbackSpeedMultiplier = 1;
     }
 
     private void Stop(InputAction.CallbackContext context)
     {
-        print("Forward Released");
+        //print("Forward Released");
         fallbackSpeedMultiplier = 0;
     }
 
     private void DoPressedThing(InputAction.CallbackContext context)
     {
-        print("Pressed");
+        //print("Pressed");
     }
 
     private void DoChangeThing(InputAction.CallbackContext context)
     {
         speedMultiplier = context.ReadValue<float>(); 
-        print(speedMultiplier);
+        //print(speedMultiplier);
     }
 
     private void DoReleasedThing(InputAction.CallbackContext context)
     {
-        print("Released");
+        //print("Released");
         speedMultiplier = 0;
     }
 }

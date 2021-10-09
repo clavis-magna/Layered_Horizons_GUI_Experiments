@@ -14,13 +14,14 @@ public class showSliderValue : MonoBehaviour
     public Slider slider;
 
 
+    void Start()
+    {
+        textDisplay = GetComponent<TextMeshProUGUI>();
+    }
+
     void Update()
     {
         slider.value = sliderInput.value;
-
-        textDisplay = GetComponent<TextMeshProUGUI>();
-
         textDisplay.text = sliderInput.sliderName + " : " + sliderInput.value;
-
     }
 }

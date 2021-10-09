@@ -9,6 +9,10 @@ public class SliderComponent : MonoBehaviour
 
     private float increment = 0.1f;
 
+    void Update()
+    {
+    }
+
     public void IncreaseValue()
     {
         value += increment;
@@ -26,4 +30,10 @@ public class SliderComponent : MonoBehaviour
             value = 0;
         }
     }
+
+    public void DefineValue(float newValue)
+    {
+        value = newValue;
+    }
+
 }

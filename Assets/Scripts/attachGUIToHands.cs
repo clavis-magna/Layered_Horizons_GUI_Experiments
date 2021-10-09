@@ -95,11 +95,11 @@ public class attachGUIToHands : MonoBehaviour
         rightGUIActivationInput = rightControllerMap.FindAction("Select");
         leftGUIActivationInput = leftControllerMap.FindAction("Select");
 
-        rightGUIActivationInput.performed += context => LeftHandGripped(context);
-        rightGUIActivationInput.canceled += context => LeftHandReleased(context);
+        leftGUIActivationInput.performed += context => LeftHandGripped(context);
+        leftGUIActivationInput.canceled += context => LeftHandReleased(context);
 
-        leftGUIActivationInput.performed += context => RightHandGripped(context);
-        leftGUIActivationInput.canceled += context => RightHandReleased(context);
+        rightGUIActivationInput.performed += context => RightHandGripped(context);
+        rightGUIActivationInput.canceled += context => RightHandReleased(context);
 
     }
 
