@@ -9,18 +9,18 @@ public class attachGUIToHands : MonoBehaviour
     //add the XR Default Input Action to this
     public InputActionAsset actionAsset;
 
+    //get position of camera to have GUI face the player.
+    //not headset because if the player moves it does not include that in headset position
+    public GameObject m_CameraGameObject;
+
     //using an actionmap to reduce the number of references on this page
     private InputActionMap rightControllerMap;
     private InputActionMap leftControllerMap;
-    private InputActionMap HMDMap;
-
 
     //Input actions for position and rotation
     private InputAction getRightPosition;
     private InputAction getLeftPosition;
-    private InputAction getHMDPosition;
 
-    Vector3 headsetPositionXYZ;
     Vector3 leftPositionXYZ;
     Vector3 rightPositionXYZ;
 
@@ -70,19 +70,15 @@ public class attachGUIToHands : MonoBehaviour
         leftControllerMap = actionAsset.FindActionMap("XRI LeftHand");
         leftControllerMap.Enable();
 
-        HMDMap = actionAsset.FindActionMap("XRI HMD");
-        HMDMap.Enable();
 
         //Find the actions within the actionmaps
 
         //POSITION
         getRightPosition = rightControllerMap.FindAction("Position");
         getLeftPosition = leftControllerMap.FindAction("Position");
-        getHMDPosition = HMDMap.FindAction("Position");
 
         getRightPosition.performed += context => getRightControllerPosition(context);
         getLeftPosition.performed += context => getLeftControllerPosition(context);
-        getHMDPosition.performed += context => getHeadsetPosition(context);
 
         //ROTATION
         getRightRotation = rightControllerMap.FindAction("Rotation");
@@ -109,9 +105,12 @@ public class attachGUIToHands : MonoBehaviour
         if (LeftGUIActive)
         {
             LeftHandGUI.transform.position = new Vector3(leftPositionXYZ.x, leftPositionXYZ.y + yPositionOffset, leftPositionXYZ.z) + transform.position;
-            Vector3 relativePosition = headsetPositionXYZ - LeftHandGUI.transform.position;
-            LeftHandGUI.transform.rotation = Quaternion.LookRotation(relativePosition);
-        } else
+            LeftHandGUI.transform.LookAt(m_CameraGameObject.transform.position);
+
+            //Vector3 relativePosition = headsetPositionXYZ - LeftHandGUI.transform.position;
+            //LeftHandGUI.transform.rotation = Quaternion.LookRotation(relativePosition);
+        }
+        else
         {
             //send this to some random place off the map
             LeftHandGUI.transform.position = new Vector3(0, 0, 0);
@@ -122,8 +121,9 @@ public class attachGUIToHands : MonoBehaviour
         if (RightGUIActive)
         {
             RightHandGUI.transform.position = new Vector3(rightPositionXYZ.x, rightPositionXYZ.y + yPositionOffset, rightPositionXYZ.z) + transform.position;
-            Vector3 relativePosition = headsetPositionXYZ - RightHandGUI.transform.position;
-            RightHandGUI.transform.rotation = Quaternion.LookRotation(relativePosition);
+            RightHandGUI.transform.LookAt(m_CameraGameObject.transform.position);
+            //Vector3 relativePosition = headsetPositionXYZ - RightHandGUI.transform.position;
+            //RightHandGUI.transform.rotation = Quaternion.LookRotation(relativePosition);
         }
         else
         {
@@ -137,7 +137,6 @@ public class attachGUIToHands : MonoBehaviour
     {
         getRightPosition.performed -= context => getRightControllerPosition(context);
         getLeftPosition.performed -= context => getLeftControllerPosition(context);
-        getHMDPosition.performed -= context => getHeadsetPosition(context);
 
         getRightRotation.performed -= context => getRightControllerRotation(context);
         getLeftRotation.performed -= context => getLeftControllerRotation(context);
@@ -147,11 +146,6 @@ public class attachGUIToHands : MonoBehaviour
 
         leftGUIActivationInput.performed -= context => RightHandGripped(context);
         leftGUIActivationInput.canceled -= context => RightHandReleased(context);
-    }
-
-    private void getHeadsetPosition(InputAction.CallbackContext context)
-    {
-        headsetPositionXYZ = context.ReadValue<Vector3>();
     }
 
     private void getLeftControllerPosition(InputAction.CallbackContext context)

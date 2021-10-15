@@ -8,8 +8,7 @@ using TMPro;
 public enum sliderType
 {
     Button,
-    ClickDrag,
-    Experimental
+    ClickDrag
 }
 
 public enum handSelect
@@ -24,14 +23,14 @@ public class changeSliderValue : MonoBehaviour
 
     public InputActionAsset actionAsset;
 
+
+    //get the text that displays.
+    //Would put this in another script but I think it can help indicate things for different interaction types.
     TextMeshProUGUI textDisplay;
 
     //using an actionmap to reduce the number of references on this page
     private InputActionMap rightControllerMap;
     private InputActionMap leftControllerMap;
-
-
-
 
     [Header("Current Slider Type: Button")]
     //assign buttons to increase and decrease the slider.
@@ -86,6 +85,8 @@ public class changeSliderValue : MonoBehaviour
 
         switch (currentSliderType)
         {
+
+            //button
             case sliderType.Button:
                 textDisplay.text = "the button to increase decrease the slider is x and y";
 
@@ -153,10 +154,21 @@ public class changeSliderValue : MonoBehaviour
 
                     //this value gets placed on the text
                     displayedValue = sliderValue - movementAmount;
+
+                    //make sure it can't get below or above 1
+                    if (displayedValue > 1)
+                    {
+                        displayedValue = 1;
+                    }
+                    if (displayedValue < 0)
+                    {
+                        displayedValue = 0;
+                    }
                 }
 
                 //text is indicated by what is on displayedValue
-                textDisplay.text = "val" + displayedValue;
+                //convert it to a string and move to 2 decible places
+                textDisplay.text = displayedValue.ToString("F2");
                 break;
         }
     }
@@ -184,17 +196,15 @@ public class changeSliderValue : MonoBehaviour
     //this is for the click drag
     private void activateChangeValue(InputAction.CallbackContext context)
     {
+        //when pressed have this active which will keep recording controller positions.
         clickDragActive = true;
 
-        //slider value is always what you receive back from the slider Component updated always.
+        //slider value is what you receive back from the slider Component
+		//replaced each time pressed so that it can tell what is the starting value to change from.
         sliderValue = GetComponent<SliderComponent>().value;
-        print("SliderBV: " + sliderValue);
+
+        //get the conroller's position too from when first pressed.
         startControllerPosition = controllerPositionXYZ.y;
-
-        ////at press make the displayed value = slider
-
-        ////save the position of the controller when first pressed the activate button
-        //startControllerPosition = controllerPositionXYZ;
 
     }
 

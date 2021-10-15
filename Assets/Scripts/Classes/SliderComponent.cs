@@ -11,6 +11,8 @@ public class SliderComponent : MonoBehaviour
 
     void Update()
     {
+        value = Mathf.Round(value * 100f) / 100f;
+
     }
 
     public void IncreaseValue()
@@ -34,6 +36,14 @@ public class SliderComponent : MonoBehaviour
     public void DefineValue(float newValue)
     {
         value = newValue;
+        if (value > 1)
+        {
+            value = 1;
+        }
+        if (value < 0)
+        {
+            value = 0;
+        }
     }
 
 }
