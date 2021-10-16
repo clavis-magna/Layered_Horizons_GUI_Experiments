@@ -11,11 +11,6 @@ public enum sliderType
     ClickDrag
 }
 
-public enum handSelect
-{
-    Left,
-    Right
-}
 
 public class changeSliderValue : MonoBehaviour
 {
@@ -100,15 +95,15 @@ public class changeSliderValue : MonoBehaviour
                 switch (activeHand)
                 {
                     case handSelect.Right:
-                        rightControllerMap = actionAsset.FindActionMap("XRI RightHand");
-                        rightControllerMap.Enable();
+                        //rightControllerMap = actionAsset.FindActionMap("XRI RightHand");
+                        //rightControllerMap.Enable();
                         getRightPosition = rightControllerMap.FindAction("Position");
                         getRightPosition.performed += context => getControllerPosition(context);
                         break;
 
                     case handSelect.Left:
-                        leftControllerMap = actionAsset.FindActionMap("XRI LeftHand");
-                        leftControllerMap.Enable();
+                        //leftControllerMap = actionAsset.FindActionMap("XRI LeftHand");
+                        //leftControllerMap.Enable();
                         getLeftPosition = leftControllerMap.FindAction("Position");
                         getLeftPosition.performed += context => getControllerPosition(context);
                         break;

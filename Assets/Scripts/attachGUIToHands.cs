@@ -4,6 +4,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
+public enum handSelect
+{
+    Left,
+    Right
+}
+
+
 public class attachGUIToHands : MonoBehaviour
 {
     //add the XR Default Input Action to this
@@ -106,9 +113,6 @@ public class attachGUIToHands : MonoBehaviour
         {
             LeftHandGUI.transform.position = new Vector3(leftPositionXYZ.x, leftPositionXYZ.y + yPositionOffset, leftPositionXYZ.z) + transform.position;
             LeftHandGUI.transform.LookAt(m_CameraGameObject.transform.position);
-
-            //Vector3 relativePosition = headsetPositionXYZ - LeftHandGUI.transform.position;
-            //LeftHandGUI.transform.rotation = Quaternion.LookRotation(relativePosition);
         }
         else
         {
@@ -122,8 +126,6 @@ public class attachGUIToHands : MonoBehaviour
         {
             RightHandGUI.transform.position = new Vector3(rightPositionXYZ.x, rightPositionXYZ.y + yPositionOffset, rightPositionXYZ.z) + transform.position;
             RightHandGUI.transform.LookAt(m_CameraGameObject.transform.position);
-            //Vector3 relativePosition = headsetPositionXYZ - RightHandGUI.transform.position;
-            //RightHandGUI.transform.rotation = Quaternion.LookRotation(relativePosition);
         }
         else
         {

@@ -183,6 +183,14 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Thumbstick"",
+                    ""type"": ""Value"",
+                    ""id"": ""72681f2c-fdad-4b46-89a8-0f2cf3d3655b"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -537,6 +545,17 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
                     ""action"": ""Dpad X"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7e973948-9e24-4892-a7c4-35f2ab5dff02"",
+                    ""path"": ""<XRController>{LeftHand}/thumbstick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Thumbstick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -661,6 +680,14 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
                     ""type"": ""Button"",
                     ""id"": ""3da25be0-4acf-40a1-87cb-427ffaf26e6b"",
                     ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Thumbstick"",
+                    ""type"": ""Value"",
+                    ""id"": ""bef84171-94cc-47ae-b58c-24543e18e7cd"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
                 }
@@ -1006,6 +1033,17 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
                     ""action"": ""Dpad A"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""67fb891e-08da-4922-8109-1ddb287d12bb"",
+                    ""path"": ""<XRController>{RightHand}/thumbstick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Thumbstick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1092,6 +1130,7 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
         m_XRILeftHand_TranslateAnchor = m_XRILeftHand.FindAction("Translate Anchor", throwIfNotFound: true);
         m_XRILeftHand_DpadY = m_XRILeftHand.FindAction("Dpad Y", throwIfNotFound: true);
         m_XRILeftHand_DpadX = m_XRILeftHand.FindAction("Dpad X", throwIfNotFound: true);
+        m_XRILeftHand_Thumbstick = m_XRILeftHand.FindAction("Thumbstick", throwIfNotFound: true);
         // XRI RightHand
         m_XRIRightHand = asset.FindActionMap("XRI RightHand", throwIfNotFound: true);
         m_XRIRightHand_Position = m_XRIRightHand.FindAction("Position", throwIfNotFound: true);
@@ -1109,6 +1148,7 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
         m_XRIRightHand_TranslateAnchor = m_XRIRightHand.FindAction("Translate Anchor", throwIfNotFound: true);
         m_XRIRightHand_DpadB = m_XRIRightHand.FindAction("Dpad B", throwIfNotFound: true);
         m_XRIRightHand_DpadA = m_XRIRightHand.FindAction("Dpad A", throwIfNotFound: true);
+        m_XRIRightHand_Thumbstick = m_XRIRightHand.FindAction("Thumbstick", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1214,6 +1254,7 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_XRILeftHand_TranslateAnchor;
     private readonly InputAction m_XRILeftHand_DpadY;
     private readonly InputAction m_XRILeftHand_DpadX;
+    private readonly InputAction m_XRILeftHand_Thumbstick;
     public struct XRILeftHandActions
     {
         private @XRIDefaultInputActions m_Wrapper;
@@ -1233,6 +1274,7 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
         public InputAction @TranslateAnchor => m_Wrapper.m_XRILeftHand_TranslateAnchor;
         public InputAction @DpadY => m_Wrapper.m_XRILeftHand_DpadY;
         public InputAction @DpadX => m_Wrapper.m_XRILeftHand_DpadX;
+        public InputAction @Thumbstick => m_Wrapper.m_XRILeftHand_Thumbstick;
         public InputActionMap Get() { return m_Wrapper.m_XRILeftHand; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1287,6 +1329,9 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
                 @DpadX.started -= m_Wrapper.m_XRILeftHandActionsCallbackInterface.OnDpadX;
                 @DpadX.performed -= m_Wrapper.m_XRILeftHandActionsCallbackInterface.OnDpadX;
                 @DpadX.canceled -= m_Wrapper.m_XRILeftHandActionsCallbackInterface.OnDpadX;
+                @Thumbstick.started -= m_Wrapper.m_XRILeftHandActionsCallbackInterface.OnThumbstick;
+                @Thumbstick.performed -= m_Wrapper.m_XRILeftHandActionsCallbackInterface.OnThumbstick;
+                @Thumbstick.canceled -= m_Wrapper.m_XRILeftHandActionsCallbackInterface.OnThumbstick;
             }
             m_Wrapper.m_XRILeftHandActionsCallbackInterface = instance;
             if (instance != null)
@@ -1336,6 +1381,9 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
                 @DpadX.started += instance.OnDpadX;
                 @DpadX.performed += instance.OnDpadX;
                 @DpadX.canceled += instance.OnDpadX;
+                @Thumbstick.started += instance.OnThumbstick;
+                @Thumbstick.performed += instance.OnThumbstick;
+                @Thumbstick.canceled += instance.OnThumbstick;
             }
         }
     }
@@ -1359,6 +1407,7 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_XRIRightHand_TranslateAnchor;
     private readonly InputAction m_XRIRightHand_DpadB;
     private readonly InputAction m_XRIRightHand_DpadA;
+    private readonly InputAction m_XRIRightHand_Thumbstick;
     public struct XRIRightHandActions
     {
         private @XRIDefaultInputActions m_Wrapper;
@@ -1378,6 +1427,7 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
         public InputAction @TranslateAnchor => m_Wrapper.m_XRIRightHand_TranslateAnchor;
         public InputAction @DpadB => m_Wrapper.m_XRIRightHand_DpadB;
         public InputAction @DpadA => m_Wrapper.m_XRIRightHand_DpadA;
+        public InputAction @Thumbstick => m_Wrapper.m_XRIRightHand_Thumbstick;
         public InputActionMap Get() { return m_Wrapper.m_XRIRightHand; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1432,6 +1482,9 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
                 @DpadA.started -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnDpadA;
                 @DpadA.performed -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnDpadA;
                 @DpadA.canceled -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnDpadA;
+                @Thumbstick.started -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnThumbstick;
+                @Thumbstick.performed -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnThumbstick;
+                @Thumbstick.canceled -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnThumbstick;
             }
             m_Wrapper.m_XRIRightHandActionsCallbackInterface = instance;
             if (instance != null)
@@ -1481,6 +1534,9 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
                 @DpadA.started += instance.OnDpadA;
                 @DpadA.performed += instance.OnDpadA;
                 @DpadA.canceled += instance.OnDpadA;
+                @Thumbstick.started += instance.OnThumbstick;
+                @Thumbstick.performed += instance.OnThumbstick;
+                @Thumbstick.canceled += instance.OnThumbstick;
             }
         }
     }
@@ -1534,6 +1590,7 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
         void OnTranslateAnchor(InputAction.CallbackContext context);
         void OnDpadY(InputAction.CallbackContext context);
         void OnDpadX(InputAction.CallbackContext context);
+        void OnThumbstick(InputAction.CallbackContext context);
     }
     public interface IXRIRightHandActions
     {
@@ -1552,5 +1609,6 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
         void OnTranslateAnchor(InputAction.CallbackContext context);
         void OnDpadB(InputAction.CallbackContext context);
         void OnDpadA(InputAction.CallbackContext context);
+        void OnThumbstick(InputAction.CallbackContext context);
     }
 }
