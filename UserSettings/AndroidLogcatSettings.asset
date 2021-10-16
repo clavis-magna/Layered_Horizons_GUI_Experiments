@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "1WMHH83C5X0526",
         "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-        "processId": 22529,
+        "processId": 31995,
         "exited": false
     },
     "m_SelectedPriority": 1,
@@ -11,793 +11,73 @@
         {
             "deviceId": "1WMHH83C5X0526",
             "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 7142,
+            "processId": 24726,
             "exited": true
         },
         {
             "deviceId": "1WMHH83C5X0526",
             "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 7814,
+            "processId": 25144,
             "exited": true
         },
         {
             "deviceId": "1WMHH83C5X0526",
             "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 8247,
+            "processId": 27005,
             "exited": true
         },
         {
             "deviceId": "1WMHH83C5X0526",
             "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 9141,
+            "processId": 27412,
             "exited": true
         },
         {
             "deviceId": "1WMHH83C5X0526",
             "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 13676,
+            "processId": 28671,
             "exited": true
         },
         {
             "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 7854,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.oculus.shellenv",
-            "processId": 12457,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 8632,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 9251,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 9642,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 10512,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 11053,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 11340,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 11905,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 17332,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 18098,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 18644,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 20996,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 21397,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 21608,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 22298,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 22559,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 23103,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 23496,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 23707,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 23978,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 9138,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 9577,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 9888,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 10509,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 10730,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 10999,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 11280,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 11673,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 12104,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 12533,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 13675,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 4110,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 4489,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 5566,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 6801,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 5092,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 5320,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 5712,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 6112,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 6696,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 6966,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 3850,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 4127,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 5054,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 4581,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 4851,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 5165,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 5520,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 6236,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 6758,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 6403,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 9018,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 9544,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 9830,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 10322,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 20431,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 21208,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 24832,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 25107,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 25627,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 26390,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 26848,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 15866,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 20263,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 21491,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 21968,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 22721,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 23084,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 24396,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 24678,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 25436,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 25934,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 26257,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 26652,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 28644,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 30414,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 21400,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 22845,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 23102,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 23848,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 678,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 3204,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 3813,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 4564,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 5197,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 7396,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 7594,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 8040,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 8704,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 9207,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 9739,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 10263,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 11327,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 11989,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 12211,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 12686,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 12950,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 13412,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 13952,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 14410,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 17220,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 18417,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 18891,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 19404,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 20219,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 8299,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 8801,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 9299,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 9837,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 10683,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 10994,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 11402,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 11706,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 14874,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 16182,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 16775,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 17251,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 18141,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 18694,
-            "exited": false
-        },
-        {
-            "deviceId": "1WMHH83C5X0526",
-            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 19513,
+            "name": "com.oculus.os.clearactivity",
+            "processId": 28791,
             "exited": false
         },
         {
             "deviceId": "1WMHH83C5X0526",
             "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 20089,
+            "processId": 29576,
             "exited": false
         },
         {
             "deviceId": "1WMHH83C5X0526",
             "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 20563,
+            "processId": 30062,
             "exited": false
         },
         {
             "deviceId": "1WMHH83C5X0526",
             "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 20969,
+            "processId": 30554,
             "exited": false
         },
         {
             "deviceId": "1WMHH83C5X0526",
             "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 21353,
+            "processId": 31174,
             "exited": false
         },
         {
             "deviceId": "1WMHH83C5X0526",
             "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 21584,
+            "processId": 31607,
             "exited": false
         },
         {
             "deviceId": "1WMHH83C5X0526",
             "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-            "processId": 22529,
+            "processId": 31995,
             "exited": false
         }
     ],
@@ -851,7 +131,7 @@
         "MemoryGroup": 2,
         "Behavior": 0
     },
-    "m_Filter": "POsition",
+    "m_Filter": "",
     "m_FilterIsRegularExpression": false,
     "m_SymbolPaths": []
 }
