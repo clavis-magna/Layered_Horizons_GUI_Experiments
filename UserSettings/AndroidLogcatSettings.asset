@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "1WMHH83C5X0526",
         "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
-        "processId": 31995,
+        "processId": 16742,
         "exited": false
     },
     "m_SelectedPriority": 1,
@@ -78,6 +78,42 @@
             "deviceId": "1WMHH83C5X0526",
             "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
             "processId": 31995,
+            "exited": false
+        },
+        {
+            "deviceId": "1WMHH83C5X0526",
+            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
+            "processId": 13524,
+            "exited": false
+        },
+        {
+            "deviceId": "1WMHH83C5X0526",
+            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
+            "processId": 13802,
+            "exited": false
+        },
+        {
+            "deviceId": "1WMHH83C5X0526",
+            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
+            "processId": 14231,
+            "exited": false
+        },
+        {
+            "deviceId": "1WMHH83C5X0526",
+            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
+            "processId": 14574,
+            "exited": false
+        },
+        {
+            "deviceId": "1WMHH83C5X0526",
+            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
+            "processId": 16042,
+            "exited": false
+        },
+        {
+            "deviceId": "1WMHH83C5X0526",
+            "name": "com.DefaultCompany.Layered_Horizons_GUI_Experiments",
+            "processId": 16742,
             "exited": false
         }
     ],

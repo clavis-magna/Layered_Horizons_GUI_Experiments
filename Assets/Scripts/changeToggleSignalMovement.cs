@@ -27,15 +27,58 @@ public class changeToggleSignalMovement : MonoBehaviour
     Vector3 rightPositionXYZ;
     Vector3 headPositionXYZ;
 
-    //get the XRController to apply the haptics
+    //get the XRController to apply the haptics these are to be sent to the vibration manager script
     //settings for amp and duration here too
     private InputDevice leftHand;
     private InputDevice rightHand;
 
-    private bool haptic;
 
-    private float _amplitude = 1.0f;
-    private float _duration = 0.1f;
+    //a function to only call the vibration when the haptic boolean changes.
+    //one is for switching head to hand the other is for hand to head
+    //I know this isn't an efficient way of doing it could be improved.
+    //https://answers.unity.com/questions/1354785/call-a-function-when-a-bool-changes-value.html
+    private bool haptic1;
+    public bool Haptic1
+    {
+        get { return haptic1; }
+        set
+        {
+            if (value == haptic1)
+                return;
+
+            haptic1 = value;
+            if (haptic1)
+            {
+                gameObject.GetComponent<vibrationManager>().Rumble(rightHand);
+                gameObject.GetComponent<vibrationManager>().Rumble(leftHand);
+                //Rumble(leftHand);
+                //Rumble(rightHand);
+            }
+        }
+    }
+    private bool haptic2;
+    public bool Haptic2
+    {
+        get { return haptic2; }
+        set
+        {
+            if (value == haptic2)
+                return;
+
+            haptic2 = value;
+            if (haptic2)
+            {
+                gameObject.GetComponent<vibrationManager>().Rumble(rightHand);
+                gameObject.GetComponent<vibrationManager>().Rumble(leftHand);
+                //Rumble(leftHand);
+                //Rumble(rightHand);
+            }
+        }
+    }
+
+
+
+
 
 
     // Start is called before the first frame update
@@ -71,38 +114,31 @@ public class changeToggleSignalMovement : MonoBehaviour
         float leftHeadDistance = headPositionXYZ.y - leftPositionXYZ.y;
 
 
-        //added this example of haptics but still needs to be done so that it only occurs once when the movement modes change.
-        if (leftHeadDistance == 0.5 || rightHeadDistance == 0.5)
-        {
-            Rumble(rightHand);
-            Rumble(leftHand);
-        }
+
 
 
         //currently based on distance between the hands and the headset
         if (leftHeadDistance < 0.5 && rightHeadDistance < 0.5)
         {
             GetComponent<ToggleComponent>().ToggleOn();
+            Haptic1 = true;
+            Haptic2 = false;
+
+            //gameObject.GetComponent<vibrationManager>().Rumble(rightHand);
+            //gameObject.GetComponent<vibrationManager>().Rumble(leftHand);
         }
         else
         {
             GetComponent<ToggleComponent>().ToggleOff();
+            Haptic1 = false;
+            Haptic2 = true;
+
         }
     }
 
-    //script pulled from here
-    //https://forum.unity.com/threads/unity-support-for-openxr-in-preview.1023613/page-5#post-7046953
-    /// <summary>
-    /// Send a rumble command to a device
-    /// </summary>
-    /// <param name="device">Device to send rumble to</param>
-    private void Rumble(InputDevice device)
-    {
-        // Setting channel to 1 will work in 1.1.1 but will be fixed in future versions such that 0 would be the correct channel.
-        var channel = 1;
-        var command = UnityEngine.InputSystem.XR.Haptics.SendHapticImpulseCommand.Create(channel, _amplitude, _duration);
-        device.ExecuteCommand(ref command);
-    }
+
+
+
 
     private void onDestroy()
     {
@@ -115,6 +151,8 @@ public class changeToggleSignalMovement : MonoBehaviour
     {
         leftPositionXYZ = context.ReadValue<Vector3>();
         //print("Left POS: " + leftPositionXYZ);
+
+        //might be innefficient to put this here. It might be calling this each time position is called.
         leftHand = context.control.device;
 
     }
